@@ -11,7 +11,7 @@ class Genre(models.Model):
 
 class Media(models.Model):
     title = models.CharField(max_length=255)
-    genres = models.ManyToManyField('Genre', blank=True, null=True)
+    genres = models.ManyToManyField('Genre', blank=True)
     status = models.CharField(max_length=50, choices=Status.choices(), default=Status.PLAN_TO_WATCH.value)
     rate = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
     cover_image = models.ImageField(upload_to='cover_images/', null=True, blank=True)

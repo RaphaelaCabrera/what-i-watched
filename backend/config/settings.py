@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'media'
+    'media',
+    'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +76,19 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 MEDIA_URL = '/files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Token': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+        }
+    },
+    'USE_SESSION_AUTH': False,  # To avoid asking for Basic Auth
+}
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
