@@ -3,11 +3,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework.parsers import JSONParser, MultiPartParser, FormParser
+from rest_framework.parsers import MultiPartParser, FormParser
 from django.http import HttpResponse, FileResponse
-from puremagic import magic_string
-from .models import Movie, TvShow
-from .serializers import MovieSerializer, MovieCoverImageSerializer, TvShowSerializer, TvShowCoverImageSerializer
+from .models import Movie, TvShow, Genre
+from .serializers import MovieSerializer, MovieCoverImageSerializer, TvShowSerializer, TvShowCoverImageSerializer, GenreSerializer
 
 
 class MovieView(APIView):
@@ -277,3 +276,15 @@ class TvShowCoverImageView(APIView):
             serializer.save()
             return Response({"message": "Cover image updated successfully"}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+class GenresView(APIView):
+    @swagger_auto_schema(
+        operation_description="Retrieve a list of genres",
+        responses={200: openapi.Response('List of genres')},
+    )
+    def get(self, request):
+        genres = Genre.objects.all()
+        serializer = GenreSerializer(genres, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)

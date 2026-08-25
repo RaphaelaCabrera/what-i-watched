@@ -25,6 +25,27 @@ export function useTvShows() {
     }
   }
 
+  async function deleteTvShow(id: number) {
+    try {
+      setLoading(true);
+      setError(null);
+
+      await fetch(`${import.meta.env.VITE_API_URL}/tv-shows/${id}/`, {
+        method: "DELETE",
+      });
+
+      await fetchTvShows();
+    } catch (error) {
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Unknown error"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
   useEffect(() => {
     fetchTvShows();
   }, []);
@@ -34,5 +55,6 @@ export function useTvShows() {
     loading,
     error,
     fetchTvShows,
+    deleteTvShow,
   };
 }

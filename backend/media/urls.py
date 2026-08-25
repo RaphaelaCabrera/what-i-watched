@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import MovieView, MovieDetailView, MovieCoverImageView, TvShowView, TvShowDetailView, TvShowCoverImageView
+from .views import MovieView, MovieDetailView, MovieCoverImageView, TvShowView, TvShowDetailView, TvShowCoverImageView, GenresView
 
 def api_root(request):
     return JsonResponse({"message": "Welcome to the API!"})
@@ -15,6 +15,7 @@ urlpatterns = [
     path('tv-shows/', TvShowView.as_view(), name='tv_shows'),
     path('tv-shows/<int:tvshow_id>/', TvShowDetailView.as_view(), name='tv_show_detail'),
     path('tv-shows/<int:tvshow_id>/cover-image/', TvShowCoverImageView.as_view(), name='tv_show_cover_image'),
+    path('genres/', GenresView.as_view(), name='genres'),
 ]
 
 if settings.DEBUG:

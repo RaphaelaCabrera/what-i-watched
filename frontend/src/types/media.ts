@@ -13,7 +13,8 @@ export interface Genre {
 export interface Media {
   id: number;
   title: string;
-  genres: Genre[];
+  genres: number[];
+  genre_details: Genre[];
   status: MediaStatus;
   rate: number | null;
   cover_image: string | null;
