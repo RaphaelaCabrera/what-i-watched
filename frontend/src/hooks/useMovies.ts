@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getMovies } from "../api";
+import { getMovies, createMovie as createMovieApi, deleteMovie as deleteMovieApi, updateMovie as updateMovieApi} from "../api";
+import type { MediaFormData } from "../types/mediaForm";
 
 export function useMovies() {
   const [movies, setMovies] = useState([]);
@@ -25,18 +26,31 @@ export function useMovies() {
     }
   }
 
-  async function addMovie(movie: { data }) {
+  async function createMovie(movie: MediaFormData) {
     try {
       setLoading(true);
       setError(null);
 
-      await fetch(`${import.meta.env.VITE_API_URL}/movies/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(movie),
-      });
+      await createMovieApi(movie);
+
+      await fetchMovies();
+    } catch (error) {
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Unknown error"
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
+   async function updateMovie(id: number, movie: MediaFormData) {
+    try {
+      setLoading(true);
+      setError(null);
+
+      await updateMovieApi(id, movie);
 
       await fetchMovies();
     } catch (error) {
@@ -55,9 +69,7 @@ export function useMovies() {
       setLoading(true);
       setError(null);
 
-      await fetch(`${import.meta.env.VITE_API_URL}/movies/${id}/`, {
-        method: "DELETE",
-      });
+      await deleteMovieApi(id);
 
       await fetchMovies();
     } catch (error) {
@@ -80,6 +92,8 @@ export function useMovies() {
     loading,
     error,
     fetchMovies,
+    createMovie,
+    updateMovie,
     deleteMovie,
   };
 }

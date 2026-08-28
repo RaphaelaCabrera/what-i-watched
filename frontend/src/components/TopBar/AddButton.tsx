@@ -1,4 +1,5 @@
 import { CirclePlus } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type AddButtonProps = {
     selectedType: 'Movies' | 'TvShows';
@@ -6,10 +7,12 @@ type AddButtonProps = {
 };
 
 export function AddButton({ selectedType, onClick }: AddButtonProps) {
+    const { t } = useTranslation();
+
     return (
         <button className={`${ selectedType === 'Movies' ? 'bg-[#ee9f27]' : 'bg-[#3bee00]'} text-white font-semibold p-2 rounded-lg`} onClick={onClick}>
             <CirclePlus className="inline-block mr-1" />
-            Adicionar {selectedType === "Movies" ? "Filme" : "Série"}
+            {t('topBar.add')} {selectedType === "Movies" ? t('common.movie') : t('common.tvShow')}
         </button>
     );
 }

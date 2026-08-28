@@ -1,6 +1,7 @@
 
 import type { Genre } from "../../types/media";
-import { getMediaStatusList } from "../../utils";
+import { getMediaGenre, getMediaStatusList } from "../../utils";
+import { useTranslation } from "react-i18next";
 
 type FiltersProps = {
     statusFilter: string;
@@ -11,6 +12,8 @@ type FiltersProps = {
 };
 
 export function Filters({ statusFilter, genreFilter, onStatusFilterChange, onGenreFilterChange, genres }: FiltersProps) {
+    const { t } = useTranslation();
+
     return (
         <div className="flex items-center justify-end gap-2 p-3 ml-auto">
            <select
@@ -18,8 +21,8 @@ export function Filters({ statusFilter, genreFilter, onStatusFilterChange, onGen
                 value={statusFilter}
                 onChange={(e) => onStatusFilterChange(e.target.value)}
             >
-                <option value="">Filtrar por status</option>
-                {getMediaStatusList().map(([status, label]) => (
+                <option value="">{t('topBar.statusFilter')}</option>
+                {getMediaStatusList(t).map(([status, label]) => (
                     <option key={status} value={status}>
                         {label}
                     </option>
@@ -31,10 +34,10 @@ export function Filters({ statusFilter, genreFilter, onStatusFilterChange, onGen
                 value={genreFilter}
                 onChange={(e) => onGenreFilterChange(e.target.value)}
             >
-                <option value="">Filtrar por gênero</option>
+                <option value="">{t('topBar.genreFilter')}</option>
                 {genres.map((genre) => (
                     <option key={genre.id} value={genre.name}>
-                        {genre.name}
+                        {getMediaGenre(genre.name, t)}
                     </option>
                 ))}
             </select>

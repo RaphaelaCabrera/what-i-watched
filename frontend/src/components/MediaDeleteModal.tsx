@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 type MediaDeleteModalProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -11,6 +13,8 @@ export function MediaDeleteModal({
   onDelete,
   selectedType
 }: MediaDeleteModalProps) {
+  const { t } = useTranslation();
+
   if (!isOpen) {
     return null;
   }
@@ -22,16 +26,16 @@ export function MediaDeleteModal({
     >
       <div className="w-96 rounded-xl bg-white p-6 shadow-xl">
         <h2 className="mb-4 text-xl font-bold text-gray-800">
-          Confirmar exclusão
+          {t("deleteConfirmationModal.title")}
         </h2>
 
         {selectedType === 'Movies' ? (
           <p className="text-gray-600">
-            Você tem certeza que deseja excluir este filme?
+            {t("deleteConfirmationModal.message.movie")}
           </p>
         ) : (
           <p className="text-gray-600">
-            Você tem certeza que deseja excluir esta série?
+            {t("deleteConfirmationModal.message.tvShow")}
           </p>
         )}
 
@@ -40,14 +44,14 @@ export function MediaDeleteModal({
             onClick={onClose}
             className="rounded-md px-4 py-2 text-gray-600 hover:bg-gray-100"
           >
-            Cancelar
+            {t("deleteConfirmationModal.cancelButton")}
           </button>
 
           <button
             onClick={onDelete}
             className="rounded-md bg-red-500 px-4 py-2 text-white hover:bg-red-600"
           >
-            Excluir
+            {t("deleteConfirmationModal.confirmButton")}
           </button>
         </div>
       </div>

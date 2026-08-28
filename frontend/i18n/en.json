@@ -1,0 +1,85 @@
+{
+  "home": {
+    "title": "Welcome to What I Watch",
+    "subtitle": "Manage your watched movies and TV shows.",
+    "noMovies": "No movies found.",
+    "noTvShows": "No TV shows found."
+  },
+
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "previous": "Previous",
+    "next": "Next",
+    "movie": "Movie",
+    "tvShow": "TV Show",
+    "minutes": "minutes"
+  },
+  "topBar": {
+    "typeToggle": {
+        "movies": "Movies",
+        "tvShows": "TV Shows"
+    },
+    "search": "Search...",
+    "statusFilter": "Filter by status",
+    "genreFilter": "Filter by genre",
+    "add": "Add"
+  },
+  "media": {
+    "title": "Title",
+    "status": "Status",
+    "rating": "Rating",
+    "genres": "Genres",
+    "cover": "Cover",
+    "releaseYear": "Release Year",
+    "duration": "Duration",
+    "episodes": "Episodes",
+    "seasons": "Seasons",
+    "poster": "Poster"
+  },
+  "deleteConfirmationModal": {
+    "title": "Delete Confirmation",
+    "message": {
+        "movie": "Are you sure you want to delete this movie?",
+        "tvShow": "Are you sure you want to delete this TV show?"
+    },
+    "confirmButton": "Delete",
+    "cancelButton": "Cancel"
+  },
+  "pagination": {
+    "page": "Page {{current}} of {{total}}"
+  },
+  "status": {
+    "planToWatch": "Plan to Watch",
+    "completed": "Completed",
+    "watching": "Watching",
+    "onHold": "On Hold",
+    "dropped": "Dropped"
+  },
+  "genres": {
+    "action": "Action",
+    "adventure": "Adventure",
+    "animation": "Animation",
+    "anime": "Anime",
+    "biography": "Biography",
+    "comedy": "Comedy",
+    "crime": "Crime",
+    "documentary": "Documentary",
+    "drama": "Drama",
+    "family": "Family",
+    "fantasy": "Fantasy",
+    "history": "History",
+    "horror": "Horror",
+    "mystery": "Mystery",
+    "musical": "Musical",
+    "reality": "Reality",
+    "romance": "Romance",
+    "sciFi": "Sci-Fi",
+    "thriller": "Thriller",
+    "war": "War",
+    "western": "Western"
+  }
+}

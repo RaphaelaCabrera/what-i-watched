@@ -1,22 +1,26 @@
+import { useTranslation } from "react-i18next";
+
 type TypeToggleProps = {
     selectedType: 'Movies' | 'TvShows';
     onToggle: (type: 'Movies' | 'TvShows') => void;
 };
 
 export function TypeToggle({ selectedType, onToggle }: TypeToggleProps) {
+    const { t } = useTranslation();
+
     return (
         <div className="p-1 rounded-full bg-[#c6dbef]">
             <button
                 className={`p-1 rounded-full font-semibold ${selectedType === 'Movies' ? 'bg-[#ee9f27] text-white' : 'bg-[#c6dbef] text-[#2171B5]'}`}
                 onClick={() => onToggle('Movies')}
             >
-                Filmes
+                {t('topBar.typeToggle.movies')}
             </button>
             <button
                 className={`p-1 rounded-full font-semibold ${selectedType === 'TvShows' ? 'bg-[#3bee00] text-white' : 'bg-[#c6dbef] text-[#2171B5]'}`}
                 onClick={() => onToggle('TvShows')}
             >
-                Séries
+                {t('topBar.typeToggle.tvShows')}
             </button>
         </div>
     )

@@ -1,0 +1,84 @@
+{
+  "home": {
+    "title": "Bem-vindo ao What I Watch",
+    "subtitle": "Gerencie sua lista de filmes e séries assistidos.",
+    "noMovies": "Nenhum filme encontrado.",
+    "noTvShows": "Nenhuma série encontrada."
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "add": "Adicionar",
+    "previous": "Anterior",
+    "next": "Próxima",
+    "movie": "Filme",
+    "tvShow": "Série",
+    "minutes": "minutos"
+  },
+  "topBar": {
+    "typeToggle": {
+        "movies": "Filmes",
+        "tvShows": "Séries"
+    },
+    "search": "Pesquisar...",
+    "statusFilter": "Filtrar por status",
+    "genreFilter": "Filtrar por gênero",
+    "add": "Adicionar"
+  },
+  "media": {
+    "title": "Título",
+    "status": "Status",
+    "rating": "Nota",
+    "genres": "Gêneros",
+    "cover": "Capa",
+    "releaseYear": "Ano de lançamento",
+    "duration": "Duração",
+    "episodes": "Episódios",
+    "seasons": "Temporadas",
+    "poster": "Pôster"
+  },
+  "deleteConfirmationModal": {
+    "title": "Confirmação de exclusão",
+    "message": {
+        "movie": "Você tem certeza que deseja excluir este filme?",
+        "tvShow": "Você tem certeza que deseja excluir esta série?"
+    },
+    "confirmButton": "Excluir",
+    "cancelButton": "Cancelar"
+  },
+  "pagination": {
+    "page": "Página {{current}} de {{total}}"
+  },
+  "status": {
+    "planToWatch": "Planejado",
+    "completed": "Concluído",
+    "watching": "Assistindo",
+    "onHold": "Em espera",
+    "dropped": "Abandonado"
+  },
+  "genres": {
+    "action": "Ação",
+    "adventure": "Aventura",
+    "animation": "Animação",
+    "anime": "Anime",
+    "biography": "Biografia",
+    "comedy": "Comédia",
+    "crime": "Crime",
+    "documentary": "Documentário",
+    "drama": "Drama",
+    "family": "Família",
+    "fantasy": "Fantasia",
+    "history": "História",
+    "horror": "Terror",
+    "mystery": "Mistério",
+    "musical": "Musical",
+    "reality": "Reality",
+    "romance": "Romance",
+    "sciFi": "Ficção científica",
+    "thriller": "Suspense",
+    "war": "Guerra",
+    "western": "Faroeste"
+  }
+}
