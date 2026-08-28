@@ -37,7 +37,8 @@
     "duration": "Duración",
     "episodes": "Episodios",
     "seasons": "Temporadas",
-    "poster": "Póster"
+    "poster": "Póster",
+    "posterPlaceholder": "Póster de {{title}}"
   },
   "deleteConfirmationModal": {
     "title": "Confirmación de eliminación",

@@ -38,7 +38,9 @@
     "duration": "Duration",
     "episodes": "Episodes",
     "seasons": "Seasons",
-    "poster": "Poster"
+    "poster": "Poster",
+    "posterPlaceholder": "{{title}}'s Poster"
+
   },
   "deleteConfirmationModal": {
     "title": "Delete Confirmation",

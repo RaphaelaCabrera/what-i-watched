@@ -25,7 +25,7 @@ export function MediaCard({ selectedType, media, handleDeleteModalOpen, handleEd
                                 ? `${API_URL}${media.cover_image}`
                                 : "/placeholder.png"
                         }
-                        alt={`Capa de ${media.title}`}
+                        alt={t('media.posterPlaceholder', { title: media.title })}
                         className="w-18 h-full rounded-lg mr-4 object-cover"
                     />
                     <div className="flex flex-col">

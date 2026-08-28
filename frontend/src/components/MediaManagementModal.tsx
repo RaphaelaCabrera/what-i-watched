@@ -230,7 +230,10 @@ export function MediaManagementModal({
 
                     <input
                         type="number"
-                        className="rounded-md bg-[#c6dbef] text-[#2171B5] p-2"
+                        className="rounded-md bg-[#c6dbef] text-[#2171B5] p-2 
+                          [&::-webkit-inner-spin-button]:appearance-none
+                          [&::-webkit-outer-spin-button]:appearance-none
+                          [appearance:textfield]"
                         value={formData.episodes}
                         onChange={(e) => handleChange("episodes", e.target.value ? Number(e.target.value) : undefined)}
                     />
@@ -243,7 +246,10 @@ export function MediaManagementModal({
 
                     <input
                         type="number"
-                        className="rounded-md bg-[#c6dbef] text-[#2171B5] p-2"
+                        className="rounded-md bg-[#c6dbef] text-[#2171B5] p-2
+                          [&::-webkit-inner-spin-button]:appearance-none
+                          [&::-webkit-outer-spin-button]:appearance-none
+                          [appearance:textfield]"
                         value={formData.seasons}
                         onChange={(e) => handleChange("seasons", e.target.value ? Number(e.target.value) : undefined)}
                     />
