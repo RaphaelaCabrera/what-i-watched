@@ -38,9 +38,6 @@ class MovieSerializer(serializers.ModelSerializer):
             'genre_details',
         ]
 
-    def get_genres(self, obj):
-        return [genre.name for genre in obj.genres.all()]
-
 
 class MovieCoverImageSerializer(serializers.ModelSerializer):
     cover_image = serializers.FileField(required=True)

@@ -9,7 +9,7 @@ import { TopBar } from "../components/TopBar/TopBar";
 import { MediaCard } from "../components/MediaCard";
 import { useMediaFilter } from "../hooks/useMediaFilter";
 import { MediaDeleteModal } from "../components/MediaDeleteModal";
-import { MediaManagementModal } from "../components/MediaManegementModal";
+import { MediaManagementModal } from "../components/MediaManagementModal";
 import { Pagination } from "../components/Pagination";
 import { useTranslation } from "react-i18next";
 

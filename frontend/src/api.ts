@@ -164,12 +164,12 @@ export async function updateTvShow(id: number, tvShow: MediaFormData) {
     formData.append("cover_image", tvShow.cover_image);
   }
 
-  if (tvShow.duration != null) {
-    formData.append("duration", String(tvShow.duration));
+  if (tvShow.episodes != null) {
+    formData.append("episodes", String(tvShow.episodes));
   }
 
-  if (tvShow.release_year != null) {
-    formData.append("release_year", String(tvShow.release_year));
+  if (tvShow.seasons != null) {
+    formData.append("seasons", String(tvShow.seasons));
   }
 
   const response = await fetch(`${API_URL}/tv-shows/${id}/`, {
